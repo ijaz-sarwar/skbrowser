@@ -1,0 +1,12 @@
+.headerContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  border-bottom: 1px solid;
+}
+
+.logo {
+  width: 100px;
+  height: 100px;
+  background-color: aquamarine;
+}
