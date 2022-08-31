@@ -7,7 +7,7 @@ function Header() {
     <div className='headerContainer'>
 
       <div className='logo'>
-        <img src="logo.PNG" width={180} height={102} />
+        <img src="logo.PNG" width={190} height={102} />
       </div>
       <div style={{ width: '90%' }}>
         <h1>KPBrowser: A Dynamic Web Platform for Genome, Proteome and Metabolome Visualization and Analysis of Klebsiella pneumonia</h1>

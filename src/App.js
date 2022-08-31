@@ -5,6 +5,7 @@ import Home from './screens/home/Home';
 import Contact from './screens/contact/Contact';
 import Search from './screens/search/Search';
 import Header from './component/header/Header';
+import About from './screens/about/About';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path="/" exact element={<Home />} />
         <Route path="contact" element={<Contact />} />
         <Route path="search" element={<Search />} />
+        <Route path="about" element={<About />} />
       </Routes>
     </div>
   );

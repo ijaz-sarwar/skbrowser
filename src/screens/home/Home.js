@@ -5,7 +5,7 @@ function Home() {
     <div style={{ width: '70%', display: 'inline-block', margin: 40 }}>
       <img style={{ marginTop: 20, marginBottom: 20 }} src="home.jpg" alt="Smiley face" width="1000px" height="500px" />
 
-      <p>Metabolomics is the newly emerging field of “omics” research. Each organism has a unique and chemically distinct metabolome.
+      <p style={{ textAlign: 'start' }}>Metabolomics is the newly emerging field of “omics” research. Each organism has a unique and chemically distinct metabolome.
         In field of metabolomics, there is need to create the metabolome database for gram positive bacterial species. Gram positive
         bacteria have a thick layer of cell wall which contains several surface proteins and enzymes for the cell wall sorting and
         targeting mechanism. Many essential details of cellular metabolism and numerous metabolic pathways of gram positive bacteria
