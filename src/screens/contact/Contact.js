@@ -33,17 +33,6 @@ function Contact() {
   return (
     <Form style={{ width: '70%', margin: 40 }} {...layout} name="nest-messages" onFinish={onFinish} validateMessages={validateMessages}>
       <Form.Item
-        name={['user', 'name']}
-        label="Name"
-        rules={[
-          {
-            required: true,
-          },
-        ]}
-      >
-        <Input placeholder='Enter your name' />
-      </Form.Item>
-      <Form.Item
         name={['user', 'email']}
         label="Email"
         rules={[
@@ -54,10 +43,29 @@ function Contact() {
       >
         <Input placeholder='Enter your Email' />
       </Form.Item>
-      <Form.Item name={['user', 'introduction']} label="Address">
-        <Input.TextArea placeholder='Enter your Address' />
+      <Form.Item
+        name={['user', 'name']}
+        label="Name"
+        rules={[
+          {
+            required: true,
+          },
+        ]}
+      >
+        <Input placeholder='Enter your name' />
       </Form.Item>
-      <Form.Item wrapperCol={{ ...layout.wrapperCol, offset: 8 }}>
+
+      <Form.Item name={['user', 'introduction']} label="Subject">
+        <Input.TextArea placeholder='Enter your Subject' />
+      </Form.Item>
+      <Form.Item name={['user', 'introduction']} label="Message">
+        <Input.TextArea
+          style={{
+            height: 120,
+          }}
+          placeholder='Enter your Message' />
+      </Form.Item>
+      <Form.Item style={{ marginBottom: 20 }} wrapperCol={{ ...layout.wrapperCol, offset: 8 }}>
         <Button type="primary" htmlType="submit">
           Submit
         </Button>
