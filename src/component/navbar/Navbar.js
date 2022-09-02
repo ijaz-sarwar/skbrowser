@@ -77,8 +77,8 @@ function Navbar() {
         <SubMenu title={<span>Metabolome</span>} />
       </SubMenu>
       <SubMenu title={<span>Download</span>}>
-        <MenuItemGroup title={<a href='SequencesofProteins.docx'>Kp45.152 FASTA Sequence</a>} />
-        <MenuItemGroup title={<a href='SequencesofProteins.docx'>Kp45.152 Genbank Full File</a>} />
+        <MenuItemGroup title={<a href='Kp45.152StrainFASTASequence .docx'>Kp45.152 FASTA Sequence</a>} />
+        <MenuItemGroup title={<a href='Kp45.152StrainGenbankFullFile.docx'>Kp45.152 Genbank Full File</a>} />
         <MenuItemGroup title={<a href='Sequencesofgenes.docx'>Sequences of Genes</a>} />
         <MenuItemGroup title={<a href='SequencesofProteins.docx'>Sequences of Proteins</a>} />
       </SubMenu>

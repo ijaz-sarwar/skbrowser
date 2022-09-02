@@ -1,7 +1,10 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState,useEffect } from 'react';
 import { SearchOutlined } from '@ant-design/icons';
 import { Button, Input, Space, Table } from 'antd';
 import Highlighter from 'react-highlight-words';
+import axios from 'axios';
+import { Link } from "react-router-dom";
+
 const data = [
   {
     key: '1',
@@ -35,6 +38,28 @@ const Search = () => {
   const [searchText, setSearchText] = useState('');
   const [searchedColumn, setSearchedColumn] = useState('');
   const searchInput = useRef(null);
+  const [state, setstate] = useState([]);
+
+  useEffect(() => {
+    getData();
+  }, []);
+  
+  const getData = () => {
+    axios.get("https://localhost:7129/api/WeatherForecast/Metabolites")
+      .then(response => {
+        console.log(response);
+        return response.json()
+      })
+      .then(data => {
+        setstate(
+          data.map(row => ({
+            Name: row.name,
+            Description: row.Description,
+            Product: row.Product,
+            id: row.id
+          })))
+      })
+  }
 
   const handleSearch = (selectedKeys, confirm, dataIndex) => {
     confirm();
@@ -147,6 +172,7 @@ const Search = () => {
       key: 'name',
       width: '30%',
       ...getColumnSearchProps('name'),
+      render:text=><Link to='/detail'>{text}</Link>
     },
     {
       title: 'Gene Description',

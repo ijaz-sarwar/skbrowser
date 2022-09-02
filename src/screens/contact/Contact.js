@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Button, Form, Input, InputNumber } from 'antd';
+import { Button, Form, Input } from 'antd';
 
 import './contact.css'
 
@@ -31,6 +31,11 @@ function Contact() {
   };
 
   return (
+    <div>
+      <div style={{backgroundColor: 'white'}}>
+
+<h4 style={{padding:20 , textAlign:'start'}}>Send mail to KPBrowser Helpdesk</h4>
+</div>
     <Form style={{ width: '70%', margin: 40 }} {...layout} name="nest-messages" onFinish={onFinish} validateMessages={validateMessages}>
       <Form.Item
         name={['user', 'email']}
@@ -71,6 +76,7 @@ function Contact() {
         </Button>
       </Form.Item>
     </Form>
+    </div>
   );
 };
 
