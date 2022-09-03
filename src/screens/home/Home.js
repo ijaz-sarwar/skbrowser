@@ -3,7 +3,7 @@ import React from 'react'
 function Home() {
   return (
     <div style={{ width: '70%', display: 'inline-block', margin: 40 }}>
-      <img style={{ marginTop: 20, marginBottom: 20 }} src="home.jpg" alt="Smiley face" width="1000px" height="500px" />
+      <img style={{ marginTop: 20, marginBottom: 20 }} src="home.jpg" alt="Smiley face" width="100%" height="auto" />
 
       <p style={{ textAlign: 'start' }}>Metabolomics is the newly emerging field of “omics” research. Each organism has a unique and chemically distinct metabolome.
         In field of metabolomics, there is need to create the metabolome database for gram positive bacterial species. Gram positive

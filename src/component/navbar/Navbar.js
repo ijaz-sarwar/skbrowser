@@ -68,6 +68,9 @@ function Navbar() {
           </SubMenu>
           <SubMenu title={<span>Motif Prediction</span>}>
             <MenuItemGroup title={<a href="https://prosite.expasy.org/scanprosite/"> ScanProsite</a>} />
+          </SubMenu>      
+              <SubMenu title={<span>Structure Prediction</span>}>
+            <MenuItemGroup title={<a href="https://swissmodel.expasy.org/"> ModeSwissl</a>} />
           </SubMenu>
           <MenuItemGroup title={<a href="https://blast.ncbi.nlm.nih.gov/Blast.cgi?PROGRAM=blastp&PAGE_TYPE=BlastSearch&LINK_LOC=blasthome"> Blastp</a>} />
           <MenuItemGroup title={<a href="https://www.expasy.org/resources/protparam">ProtParam</a>} />

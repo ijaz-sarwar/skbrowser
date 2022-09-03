@@ -1,6 +1,6 @@
 import React, { useRef, useState,useEffect } from 'react';
 import { SearchOutlined } from '@ant-design/icons';
-import { Button, Input, Space, Table } from 'antd';
+import { Button, Input, Space, Table ,Tooltip} from 'antd';
 import Highlighter from 'react-highlight-words';
 import axios from 'axios';
 import { Link } from "react-router-dom";
@@ -45,22 +45,12 @@ const Search = () => {
   }, []);
   
   const getData = () => {
-    axios.get("https://localhost:7129/api/WeatherForecast/Metabolites")
+     axios.get("https://jsonplaceholder.typicode.com/posts")
       .then(response => {
-        console.log(response);
-        return response.json()
-      })
-      .then(data => {
-        setstate(
-          data.map(row => ({
-            Name: row.name,
-            Description: row.Description,
-            Product: row.Product,
-            id: row.id
-          })))
+        setstate(response.data);
       })
   }
-
+console.log(state)
   const handleSearch = (selectedKeys, confirm, dataIndex) => {
     confirm();
     setSearchText(selectedKeys[0]);
@@ -161,36 +151,36 @@ const Search = () => {
 
     {
       title: 'KPB ID',
-      dataIndex: 'age',
-      key: 'age',
+      dataIndex: 'id',
+      key: 'id',
       width: '15%',
-      ...getColumnSearchProps('age'),
+      ...getColumnSearchProps('id'),
     },
     {
       title: 'Gene Name',
-      dataIndex: 'name',
-      key: 'name',
+      dataIndex: 'title',
+      key: 'title',
       width: '30%',
-      ...getColumnSearchProps('name'),
-      render:text=><Link to='/detail'>{text}</Link>
+      ...getColumnSearchProps('title'),
+      render:text=> <Tooltip placement="topLeft" title={text}><Link to='/detail'>{text}</Link></Tooltip>
     },
     {
       title: 'Gene Description',
-      dataIndex: 'address',
-      key: 'address',
+      dataIndex: 'body',
+      key: 'body',
       // ...getColumnSearchProps('address'),
       // sorter: (a, b) => a.address.length - b.address.length,
       sortDirections: ['descend', 'ascend'],
     },
     {
-      title: 'Gene Product',
-      dataIndex: 'address',
-      key: 'address',
+      title: 'Gene Product (Protein)',
+      dataIndex: 'body',
+      key: 'body',
     },
   ];
 
   return (
-    <Table style={{ width: '80%', display: 'inline-block', margin: 40 }} columns={columns} dataSource={data} />
+    <Table style={{ width: '80%', display: 'inline-block', margin: 40 }} columns={columns} dataSource={state} />
   )
 }
 
