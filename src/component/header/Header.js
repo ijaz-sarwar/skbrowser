@@ -10,7 +10,7 @@ function Header() {
         <img src="logo.PNG" width={170} height={102} />
       </div>
       <div style={{ width: '88%' }}>
-        <h1 style={{fontWeight:'bold'}}>KPBrowser: A Dynamic Web Platform for Genome, Proteome and Metabolome Visualization and Analysis of Klebsiella pneumonia</h1>
+        <h1 style={{fontWeight:'bold'}}>KPBrowser: A Dynamic Web Platform for Genome, Proteome and Metabolome Visualization and Analysis of <i>Klebsiella pneumoniae</i></h1>
       </div>
     </div>
 
