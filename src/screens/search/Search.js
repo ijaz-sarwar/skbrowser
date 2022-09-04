@@ -38,14 +38,14 @@ const Search = () => {
   const [searchText, setSearchText] = useState('');
   const [searchedColumn, setSearchedColumn] = useState('');
   const searchInput = useRef(null);
-  const [state, setstate] = useState([]);
+  const [state, setstate] = useState(null);
 
   useEffect(() => {
     getData();
   }, []);
   
   const getData = () => {
-     axios.get("https://jsonplaceholder.typicode.com/posts")
+     axios.get("https://localhost:7129/api/WeatherForecast/Metabolites")
       .then(response => {
         setstate(response.data);
       })
@@ -151,36 +151,36 @@ console.log(state)
 
     {
       title: 'KPB ID',
-      dataIndex: 'id',
-      key: 'id',
+      dataIndex: 'genId',
+      key: 'genId',
       width: '15%',
-      ...getColumnSearchProps('id'),
+      ...getColumnSearchProps('genId'),
     },
     {
       title: 'Gene Name',
-      dataIndex: 'title',
-      key: 'title',
+      dataIndex: 'geneName',
+      key: 'geneName',
       width: '30%',
-      ...getColumnSearchProps('title'),
-      render:text=> <Tooltip placement="topLeft" title={text}><Link to='/detail'>{text}</Link></Tooltip>
+      ...getColumnSearchProps('geneName'),
+      render:text=> <Tooltip placement="topLeft" title={text}><Link  to='/detail' state={{ testvalue: state.filter((item)=>item.geneName==text) }}>{text}</Link></Tooltip>
     },
     {
       title: 'Gene Description',
-      dataIndex: 'body',
-      key: 'body',
+      dataIndex: 'geneDescription',
+      key: 'geneDescription',
       // ...getColumnSearchProps('address'),
       // sorter: (a, b) => a.address.length - b.address.length,
       sortDirections: ['descend', 'ascend'],
     },
     {
       title: 'Gene Product (Protein)',
-      dataIndex: 'body',
-      key: 'body',
+      dataIndex: 'geneProductProtein',
+      key: 'geneProductProtein',
     },
   ];
 
   return (
-    <Table style={{ width: '80%', display: 'inline-block', margin: 40 }} columns={columns} dataSource={state} />
+    <Table style={{ width: '80%', display: 'inline-block', margin: 40 }} rowKey='index' columns={columns} dataSource={state} />
   )
 }
 
